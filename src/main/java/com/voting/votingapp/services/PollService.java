@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.voting.votingapp.model.OptionVote;
 import com.voting.votingapp.model.Poll;
 import com.voting.votingapp.repositories.PollRepository;
 
@@ -30,11 +31,14 @@ public class PollService {
     }
 
     public void vote(Long pollId, int optionIndex) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'vote'");
-    }
-
-    // public void vote(Long pollId, int optionIndex) {
-    //     Poll poll = poll
-    // }
+        Poll poll = pollRepository.findById(pollId)
+            .orElseThrow(() -> new RuntimeException("Poll not found"));
+            List<OptionVote> options = poll.getOptions();
+            if(optionIndex < 0 || optionIndex >= options.size()) {
+                throw new RuntimeException("Invalid option index");
+            }
+            OptionVote selectedOption = options.get(optionIndex);
+            selectedOption.setVoteCount(selectedOption.getVoteCount() + 1);
+            pollRepository.save(poll);
+           }
 }
