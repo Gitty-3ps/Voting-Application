@@ -1,9 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.jdt.ls.java.home": "C:\\Users\\User\\.vscode\\extensions\\redhat.java-1.41.1-win32-x64\\jre\\21.0.6-win32-x86_64",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "files.exclude": {
-        "**/target": true,
-        "**/build": true
-    }
-}
