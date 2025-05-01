@@ -1,6 +1,6 @@
 export interface OptionVote {
-    optionText: number;
-    votes: string;
+    optionText: string;
+    voteCount: number;
 }
 
 export  interface Poll {
