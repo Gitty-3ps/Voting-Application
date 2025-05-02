@@ -74,6 +74,10 @@ export class PollComponent implements OnInit {
     });
   }
 
+  addOption() {
+    this.newPoll.options.push({ optionText: '', voteCount: 0 });  
+  }
+
   trackByIndex(index: number): number {
     return index; 
   }
