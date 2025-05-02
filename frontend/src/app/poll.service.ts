@@ -19,9 +19,9 @@ export class PollService {
       return this.http.get<Poll[]>(this.baseUrl);
     }
 
-    votePoll(pollId: number, optionText: string): Observable<void> {
+    votePoll(pollId: number, optionIndex: number): Observable<void> {
       const url = `${this.baseUrl}/vote`;
-      return this.http.post<void>(url, { pollId, optionText });
+      return this.http.post<void>(url, { pollId, optionIndex });
     }
   }
 
