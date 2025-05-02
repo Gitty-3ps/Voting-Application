@@ -78,6 +78,12 @@ export class PollComponent implements OnInit {
     this.newPoll.options.push({ optionText: '', voteCount: 0 });  
   }
 
+  removeOption(index: number) {
+    if (this.newPoll.options.length > 2) {
+      this.newPoll.options.splice(index, 1);
+    }
+  }
+
   trackByIndex(index: number): number {
     return index; 
   }

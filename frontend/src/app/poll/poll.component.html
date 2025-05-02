@@ -15,12 +15,7 @@
                 [(ngModel)]="option.optionText"
                 required
                 />
-                <button 
-                *ngIf="newPoll.options.length > 2" 
-                click="newPoll.options.splice(i, 1)"
-                class="btn btn-danger">
-                    Remove
-                 </button>
+                <button class="btn btn-danger" (click)="removeOption(i)">Remove</button>
             </div>
         </div>
     <button class="btn btn-primary" (click)="addOption()">Add Another Option</button>
